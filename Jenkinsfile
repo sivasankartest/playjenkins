@@ -36,7 +36,6 @@ pipeline {
         }
       }
     }
-    stage('Send an email') {
     post {
         failure {
             script {
@@ -56,7 +55,6 @@ pipeline {
                   );
              }
          }
-     }
-    }
-  }
+      }
+   }
 }
