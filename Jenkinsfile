@@ -47,7 +47,7 @@ pipeline {
             }
          success {
              script {
-                mail (to: 'email@gmail.com',
+                mail (to: 'hai.ssreddy@gmail.com',
                         subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) success.",
                         body: "Please visit ${env.BUILD_URL} for further information.",
 
