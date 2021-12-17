@@ -36,7 +36,9 @@ pipeline {
         }
       }
     }
-   post {
+   stage('Send an email')
+    Steps{
+    post {
         failure {
             script {
                 mail (to: 'hai.ssreddy@gmail.com',
