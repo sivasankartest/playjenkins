@@ -37,22 +37,10 @@ pipeline {
       }
     }
   post {
-        failure {
-            script {
-                mail (to: 'hai.ssreddy@gmail.com',
-                        subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) failed",
-                        body: "Please visit ${env.BUILD_URL} for further information"
-                );
-                }
-            }
-         success {
-             script {
-                mail (to: 'hai.ssreddy@gmail.com',
-                        subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) success.",
-                        body: "Please visit ${env.BUILD_URL} for further information.",
-                     );
-             }
+        failure {    // notify users when the Pipeline fails
+            mail(to: 'hai.ssreddy@gmail.com', subject: "Failed Pipeline", body: "Something is wrong ${BUILD_NUMBER}.")
          }
-      }
+       }
+     }
    }
 }
