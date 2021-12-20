@@ -37,8 +37,8 @@ pipeline {
       }
     }
   post {
-        failure {    // notify users when the Pipeline fails
-            mail(to: 'hai.ssreddy@gmail.com', subject: "Failed Pipeline", body: "Something is wrong ${BUILD_NUMBER}.")
+      failure {    // notify users when the Pipeline fails
+            mail(to: 'hai.ssreddy@gmail.com', subject: "Failed Pipeline", body: "Something is wrong")
          }
        }
      }
